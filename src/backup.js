@@ -1,3 +1,4 @@
+const path = require('path');
 const settings = require('./settings/settings');
 const defaultSettings = require('./settings/defaultSettings');
 const exec = require('child_process').exec;
@@ -21,7 +22,7 @@ const doBackup = () => {
 
     const { targetDir, mongodb } = resolvedSettings;
 
-    const dumpPath = `${targetDir}/${mongodb.database}_${dateString}.gz`;
+    const dumpPath = path.join(targetDir, `${mongodb.database}_${dateString}.gz`);
 
     const cmd = `mongodump ${buildCmdOptions(
         mongodb
