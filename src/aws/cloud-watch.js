@@ -18,7 +18,7 @@ const sendMetric = metricName => {
                 MetricName: metricName,
                 Value: 1,
                 Unit: 'Count'
-            },
+            }
         ],
         Namespace: namespace
     };

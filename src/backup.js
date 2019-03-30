@@ -22,7 +22,10 @@ const doBackup = () => {
 
     const { targetDir, mongodb } = resolvedSettings;
 
-    const dumpPath = path.join(targetDir, `${mongodb.database}_${dateString}.gz`);
+    const dumpPath = path.join(
+        targetDir,
+        `${mongodb.database}_${dateString}.gz`
+    );
 
     const cmd = `mongodump ${buildCmdOptions(
         mongodb

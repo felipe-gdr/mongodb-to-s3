@@ -43,15 +43,17 @@ const cleanupOldFiles = async () => {
     const threshold =
         new Date().getTime() - localRetentionInDays * 24 * 60 * 60 * 1000;
 
-    const promises = files.map(file => path.join(targetDir, file)).map(async file => {
-        const creationDate = await getCreationDate(file);
+    const promises = files
+        .map(file => path.join(targetDir, file))
+        .map(async file => {
+            const creationDate = await getCreationDate(file);
 
-        if (creationDate < threshold) {
-            await deleteFile(file);
+            if (creationDate < threshold) {
+                await deleteFile(file);
 
-            return file;
-        }
-    });
+                return file;
+            }
+        });
 
     return Promise.all(promises).then(files => files.filter(Boolean));
 };

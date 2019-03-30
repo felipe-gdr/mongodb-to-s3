@@ -9,7 +9,7 @@ const defaultSettings = {
     },
     aws: {
         cloudWatch: {
-            namespace: 'ops',
+            namespace: 'ops'
         }
     }
 };
