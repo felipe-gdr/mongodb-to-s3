@@ -3,7 +3,7 @@ A simple node script that will generate a dump of a MongoDB database and upload 
 
 
 ## Configuration
-Create a file `src/settings.js` based on `src/settings.template.js` and modify the options according to your database and AWS environments.
+Create a file `src/settings/settings.js` based on `src/settings/settings.template.js` and modify the options according to your database and AWS environments.
 
 ## Executing
 Run `node src/index.js`.
