@@ -1,7 +1,7 @@
 const AWS = require('aws-sdk');
 const fs = require('fs');
 
-const settings = require('./settings');
+const settings = require('../settings/settings');
 
 AWS.config.update({
     secretAccessKey: settings.aws.secretAccessKey,

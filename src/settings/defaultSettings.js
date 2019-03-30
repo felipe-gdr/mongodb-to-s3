@@ -5,6 +5,11 @@ const defaultSettings = {
         password: '',
         host: 'locahost',
         port: 27017
+    },
+    aws: {
+        cloudWatch: {
+            namespace: 'ops',
+        }
     }
 };
 

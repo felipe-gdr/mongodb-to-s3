@@ -1,16 +1,6 @@
-const settings = require('./settings');
-const fs = require('fs');
+const settings = require('./settings/settings');
+const defaultSettings = require('./settings/defaultSettings');
 const exec = require('child_process').exec;
-
-const defaultSettings = {
-    targetDir: './dumps',
-    mongodb: {
-        user: '',
-        password: '',
-        host: 'locahost',
-        port: 27017
-    }
-};
 
 const resolvedSettings = { ...defaultSettings, ...settings };
 

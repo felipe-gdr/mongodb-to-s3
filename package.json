@@ -2,7 +2,7 @@
   "name": "mongodb-to-s3",
   "version": "1.0.0",
   "description": "Simple Node app that performs mongodb backups and sends them to AWS S3",
-  "main": "src/backup.js",
+  "main": "src/index.js",
   "author": "Felipe Reis",
   "license": "MIT",
   "scripts": {
@@ -10,7 +10,10 @@
     "lint:fix": "prettier \"src/**/*.js\" --write"
   },
   "dependencies": {
-    "aws-sdk": "^2.432.0"
+    "aws-sdk": "^2.432.0",
+    "cron": "^1.7.0",
+    "winston": "^3.2.1",
+    "winston-daily-rotate-file": "^3.8.0"
   },
   "devDependencies": {
     "prettier": "^1.16.4"
