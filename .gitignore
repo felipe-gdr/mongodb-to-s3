@@ -1,0 +1,5 @@
+src/settings.js
+.idea
+dumps
+node_modules
+yarn.lock
