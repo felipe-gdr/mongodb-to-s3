@@ -1,5 +1,6 @@
 const defaultSettings = {
     targetDir: './dumps',
+    logsDir: './logs',
     mongodb: {
         user: '',
         password: '',
