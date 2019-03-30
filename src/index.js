@@ -1,6 +1,5 @@
 const doBackup = require('./backup');
 
-
 const execute = async () => {
     const { dumpPath } = await doBackup();
 
@@ -8,4 +7,3 @@ const execute = async () => {
 };
 
 execute();
-

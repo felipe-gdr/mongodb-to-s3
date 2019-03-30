@@ -1,4 +1,5 @@
-src/settings.js
+src/settings/settings.js
+logs
 .idea
 dumps
 node_modules

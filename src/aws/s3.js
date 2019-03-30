@@ -6,10 +6,10 @@ const settings = require('./settings');
 AWS.config.update({
     secretAccessKey: settings.aws.secretAccessKey,
     accessKeyId: settings.aws.accessKeyId,
-    region: settings.aws.region,
+    region: settings.aws.region
 });
 
-const upload = ({filePath}) => {
+const upload = ({ filePath }) => {
     const s3 = new AWS.S3();
 
     const parts = filePath.split('/');
@@ -18,22 +18,18 @@ const upload = ({filePath}) => {
     const params = {
         Bucket: settings.aws.bucket,
         Body: fs.createReadStream(filePath),
-        Key: key,
+        Key: key
     };
 
     return new Promise((resolve, reject) => {
-        s3.putObject(params, function (err, data) {
+        s3.putObject(params, function(err) {
             if (err) {
                 reject(err);
             } else {
-                resolve();
+                resolve({ s3Key: key });
             }
         });
     });
 };
-
-upload({ filePath: './dumps/mongodump_2019-3-30-14-14-45.gz' })
-    .then(() => console.log('success!'))
-    .catch(error => console.log(error));
 
 module.exports = upload;
